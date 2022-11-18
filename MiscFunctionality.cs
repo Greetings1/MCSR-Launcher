@@ -95,7 +95,7 @@ namespace Session_Control
             }
             catch (Exception)
             {
-                MessageBox.Show("Could not find Paths.txt");
+                //MessageBox.Show("Could not find Paths.txt");
             }
 
         }
@@ -156,7 +156,7 @@ namespace Session_Control
             }
             catch (Exception)
             {
-                MessageBox.Show("Could not find valid paths");
+                //MessageBox.Show("Could not find valid paths");
             }
 
         }

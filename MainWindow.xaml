@@ -85,11 +85,11 @@
                 </TransformGroup>
             </CheckBox.RenderTransform>
         </CheckBox>
-        <TextBlock HorizontalAlignment="Left" Margin="222,143,0,0" TextWrapping="Wrap" Text="Standard Settings" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="222,170,0,0" TextWrapping="Wrap" Text="Ninjabrain Bot" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="222,197,0,0" TextWrapping="Wrap" Text="Tracker" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="222,224,0,0" TextWrapping="Wrap" Text="MultiMC" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="222,251,0,0" TextWrapping="Wrap" Text="TheWall Macro" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="222,278,0,0" TextWrapping="Wrap" Text="OBS" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
+        <TextBlock x:Name="SSSTextblock" HorizontalAlignment="Left" Margin="222,143,0,0" TextWrapping="Wrap" Text="Standard Settings" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
+        <TextBlock x:Name="NinBotTextBlock" HorizontalAlignment="Left" Margin="222,170,0,0" TextWrapping="Wrap" Text="Ninjabrain Bot" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
+        <TextBlock x:Name="TrackerTextBlock" HorizontalAlignment="Left" Margin="222,197,0,0" TextWrapping="Wrap" Text="Tracker" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
+        <TextBlock x:Name="MultiMCTextBlock" HorizontalAlignment="Left" Margin="222,224,0,0" TextWrapping="Wrap" Text="MultiMC" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
+        <TextBlock x:Name="WallMacroTextBlock" HorizontalAlignment="Left" Margin="222,251,0,0" TextWrapping="Wrap" Text="TheWall Macro" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
+        <TextBlock x:Name="OBSTextBlock" HorizontalAlignment="Left" Margin="222,278,0,0" TextWrapping="Wrap" Text="OBS" VerticalAlignment="Top" FontSize="10" Foreground="White"/>
     </Grid>
 </Window>

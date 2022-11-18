@@ -33,19 +33,27 @@ namespace Session_Control
         {
             if (Settings.settings_sync)
             {
-                try
+                if (Settings.StandardSettings != "")
                 {
-                    string standardSettingsString = File.ReadAllText(Settings.StandardSettings);
-                    for (int i = 1; i <= Settings.instance_count; i++)
+                    try
                     {
-                        File.WriteAllText($"{Settings.MultiMCSplit[0]}\\instances\\{Settings.Instance_Format}{i}\\.minecraft\\config\\standardoptions.txt", standardSettingsString);
+                        string standardSettingsString = File.ReadAllText(Settings.StandardSettings);
+                        for (int i = 1; i <= Settings.instance_count; i++)
+                        {
+                            File.WriteAllText($"{Settings.MultiMCSplit[0]}\\instances\\{Settings.Instance_Format}{i}\\.minecraft\\config\\standardoptions.txt", standardSettingsString);
+                        }
+                        //Console.WriteLine("Syncing Standardsettings");
                     }
-                    //Console.WriteLine("Syncing Standardsettings");
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Could not sync Settings. Path missing or invalid.");
+                    }
                 }
-                catch (Exception)
+                else
                 {
                     MessageBox.Show("Could not sync Settings. Path missing or invalid.");
                 }
+
 
             }
         }
@@ -54,17 +62,25 @@ namespace Session_Control
         {
             if (Settings.start_instances)
             {
-                try
+                if (Settings.MultiMC != "")
                 {
-                    processStarter(Settings.MultiMCSplit[0], $"start MultiMC.exe");
-                    Thread.Sleep(2000);
+                    try
+                    {
+                        processStarter(Settings.MultiMCSplit[0], $"start MultiMC.exe");
+                        Thread.Sleep(2000);
 
-                    //Console.WriteLine("Starting MultiMC");
+                        //Console.WriteLine("Starting MultiMC");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Could not run MultiMC. Path missing or invalid.");
+                    }
                 }
-                catch (Exception)
+                else
                 {
                     MessageBox.Show("Could not run MultiMC. Path missing or invalid.");
                 }
+
             }
 
 
@@ -74,28 +90,44 @@ namespace Session_Control
         {
             if (Settings.start_ninjabrain)
             {
-                try
+                if (Settings.NinjaBot != "")
                 {
-                    processStarter(Settings.NinjaBotSplit[0], $"javaw -jar {Settings.NinjaBotSplit[1]}");
-                    //Console.WriteLine("Starting NinBot");
+                    try
+                    {
+                        processStarter(Settings.NinjaBotSplit[0], $"javaw -jar {Settings.NinjaBotSplit[1]}");
+                        //Console.WriteLine("Starting NinBot");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Could not run Ninjabrain Bot. Path missing or invalid.");
+                    }
                 }
-                catch (Exception)
+                else
                 {
                     MessageBox.Show("Could not run Ninjabrain Bot. Path missing or invalid.");
                 }
 
+
             }
             if (Settings.start_Tracker)
             {
-                try
+                if (Settings.Tracker != "")
                 {
-                    processStarter(Settings.TrackerSplit[0], $"start {Settings.TrackerSplit[1]}");
-                    //Console.WriteLine("Starting Tracker");
+                    try
+                    {
+                        processStarter(Settings.TrackerSplit[0], $"start {Settings.TrackerSplit[1]}");
+                        //Console.WriteLine("Starting Tracker");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Could not run Tracker. Path missing or invalid.");
+                    }
                 }
-                catch (Exception)
+                else
                 {
                     MessageBox.Show("Could not run Tracker. Path missing or invalid.");
                 }
+
 
             }
         }
@@ -111,82 +143,92 @@ namespace Session_Control
         {
             if (Settings.reset_macro)
             {
-                Thread.Sleep(15000);
-                while (true)
+                if (true)
                 {
-                    try
+                    Thread.Sleep(15000);
+                    while (true)
                     {
-                        int x = 0;
-                        for (int i = 1; i <= Settings.instance_count; i++)
+                        try
                         {
-                            var logs = File.Open($@"{Settings.MultiMCSplit[0]}\instances\{Settings.Instance_Format}{i}\.minecraft\logs\latest.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
-                            StreamReader logReader = new(logs);
-
-                            try
+                            int x = 0;
+                            for (int i = 1; i <= Settings.instance_count; i++)
                             {
-                                string[] logLines = logReader.ReadToEnd().Split("\n");
+                                var logs = File.Open($@"{Settings.MultiMCSplit[0]}\instances\{Settings.Instance_Format}{i}\.minecraft\logs\latest.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
 
-                                if (logLines[logLines.Length - 2].Contains("minecraft:textures/atlas/mob_effects.png-atlas"))
+                                StreamReader logReader = new(logs);
+
+                                try
+                                {
+                                    string[] logLines = logReader.ReadToEnd().Split("\n");
+
+                                    if (logLines[logLines.Length - 2].Contains("minecraft:textures/atlas/mob_effects.png-atlas"))
+                                    {
+                                        x++;
+                                    }
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+                                Thread.Sleep(100);
+
+                            }
+                            Thread.Sleep(2000);
+                            if (x == Settings.instance_count)
+                            {
+                                break;
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                            break;
+                        }
+                    }
+
+                    Thread.Sleep(2000);
+
+                    processStarter(Environment.CurrentDirectory, "enter.ahk");
+
+                    while (true)
+                    {
+                        try
+                        {
+                            int x = 0;
+                            for (int i = 1; i <= Settings.instance_count; i++)
+                            {
+                                var logs = File.Open($"{Settings.MultiMCSplit[0]}\\instances\\{Settings.Instance_Format}{i}\\.minecraft\\logs\\latest.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+
+                                StreamReader logReader = new(logs);
+
+                                if (logReader.ReadToEnd().Contains("joined the game"))
                                 {
                                     x++;
                                 }
+                                Thread.Sleep(100);
                             }
-                            catch (Exception)
+                            if (x == Settings.instance_count)
                             {
-
+                                break;
                             }
-                            Thread.Sleep(100);
-
                         }
-                        Thread.Sleep(2000);
-                        if (x == Settings.instance_count)
+                        catch (Exception)
                         {
+                            MessageBox.Show("Could not find logs. Path missing or invalid.");
                             break;
                         }
                     }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Could not find logs. Path missing or invalid.");
-                        break;
-                    }
+
+                    Thread.Sleep(3000);
+                    processStarter(Environment.CurrentDirectory, "paus.ahk");
                 }
-
-                Thread.Sleep(1000);
-
-                processStarter(Environment.CurrentDirectory, "enter.ahk");
-
-                while (true)
+                else
                 {
-                    try
-                    {
-                        int x = 0;
-                        for (int i = 1; i <= Settings.instance_count; i++)
-                        {
-                            var logs = File.Open($"{Settings.MultiMCSplit[0]}\\instances\\{Settings.Instance_Format}{i}\\.minecraft\\logs\\latest.log", FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-
-                            StreamReader logReader = new(logs);
-
-                            if (logReader.ReadToEnd().Contains("joined the game"))
-                            {
-                                x++;
-                            }
-                            Thread.Sleep(100);
-                        }
-                        if (x == Settings.instance_count)
-                        {
-                            break;
-                        }
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Could not find logs. Path missing or invalid.");
-                        break;
-                    }
+                    MessageBox.Show("Could not find logs. Path missing or invalid.");
                 }
 
-                Thread.Sleep(3000);
-                processStarter(Environment.CurrentDirectory, "paus.ahk");
+
+
             }
 
             macro_startup();
@@ -198,16 +240,24 @@ namespace Session_Control
         {
             if (Settings.reset_macro)
             {
-                try
+                if (Settings.WallMacro != "")
                 {
-                    processStarter(Settings.WallMacroSplit[0], Settings.WallMacroSplit[1]);
-                    //Console.WriteLine("Starting reset macro...");
-                    Thread.Sleep(3 + ((Settings.instance_count * 1000) / 4));
+                    try
+                    {
+                        processStarter(Settings.WallMacroSplit[0], Settings.WallMacroSplit[1]);
+                        //Console.WriteLine("Starting reset macro...");
+                        Thread.Sleep(3 + ((Settings.instance_count * 1000) / 4));
+                    }
+                    catch (Exception)
+                    {
+
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Could not run WallMacro. Path missing or invalid.");
+                        MessageBox.Show("Could not run WallMacro. Path missing or invalid.");
                 }
+
             }
         }
 
@@ -215,15 +265,23 @@ namespace Session_Control
         {
             if (Settings.start_obs)
             {
-                try
+                if (Settings.OBS != "")
                 {
-                    processStarter(Settings.OBSSplit[0], Settings.OBSSplit[1] + " --scene \"Source Record\"");
-                    //Console.WriteLine("Starting OBS...");
+                    try
+                    {
+                        processStarter(Settings.OBSSplit[0], Settings.OBSSplit[1] + " --scene \"Source Record\"");
+                        //Console.WriteLine("Starting OBS...");
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Could not run OBS. Path missing or invalid.");
+                    }
                 }
-                catch (Exception)
+                else
                 {
                     MessageBox.Show("Could not run OBS. Path missing or invalid.");
                 }
+
             }
         }
 

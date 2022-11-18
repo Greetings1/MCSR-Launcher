@@ -173,20 +173,28 @@ namespace Session_Control
         {
             if (Settings.start_instances)
             {
-                try
+                if (Settings.MultiMC != "")
                 {
-                    for (int i = 1; i <= Settings.instance_count; i++)
+                    try
                     {
-                        //Console.Write($"Starting {Settings.Instance_Format}{i}...");
-                        Thread.Sleep(100);
-                        ProcessStarter(i);
+                        for (int i = 1; i <= Settings.instance_count; i++)
+                        {
+                            //Console.Write($"Starting {Settings.Instance_Format}{i}...");
+                            Thread.Sleep(100);
+                            ProcessStarter(i);
+                        }
                     }
+                    catch (Exception)
+                    {
+
+                    }
+                    inst = 1;
                 }
-                catch (Exception)
+                else
                 {
-                    MessageBox.Show("Could not start instances. Path or instance format missing or invalid.");
+                        MessageBox.Show("Could not start instances. Path or instance format missing or invalid.");
                 }
-                inst = 1;
+
 
             }
         }
@@ -326,31 +334,43 @@ namespace Session_Control
             {
                 FilePathbtnSSS.Visibility = Visibility.Hidden;
                 SSSTextbox.Visibility = Visibility.Hidden;
+                SSSTextblock.Visibility = Visibility.Hidden;
                 PathbtnNinbot.Visibility = Visibility.Hidden;
                 NinBotTextBox.Visibility = Visibility.Hidden;
+                NinBotTextBlock.Visibility = Visibility.Hidden;
                 FilebtnTracker.Visibility = Visibility.Hidden;
                 TrackerTextBox.Visibility = Visibility.Hidden;
+                TrackerTextBlock.Visibility = Visibility.Hidden;
                 PathbtnMultiMC.Visibility = Visibility.Hidden;
                 MultiMCTextBox.Visibility = Visibility.Hidden;
+                MultiMCTextBlock.Visibility = Visibility.Hidden;
                 PathbtnTheWall.Visibility = Visibility.Hidden;
                 WallMacroTextBox.Visibility = Visibility.Hidden;
+                WallMacroTextBlock.Visibility = Visibility.Hidden;
                 PathbtnOBS.Visibility = Visibility.Hidden;
                 OBSTextBox.Visibility= Visibility.Hidden;
+                OBSTextBlock.Visibility= Visibility.Hidden;
             }
             else
             {
                 FilePathbtnSSS.Visibility = Visibility.Visible;
                 SSSTextbox.Visibility = Visibility.Visible;
+                SSSTextblock.Visibility = Visibility.Visible;
                 PathbtnNinbot.Visibility = Visibility.Visible;
                 NinBotTextBox.Visibility = Visibility.Visible;
+                NinBotTextBlock.Visibility = Visibility.Visible;
                 FilebtnTracker.Visibility = Visibility.Visible;
                 TrackerTextBox.Visibility = Visibility.Visible;
+                TrackerTextBlock.Visibility = Visibility.Visible;
                 PathbtnMultiMC.Visibility = Visibility.Visible;
                 MultiMCTextBox.Visibility = Visibility.Visible;
+                MultiMCTextBlock.Visibility = Visibility.Visible;
                 PathbtnTheWall.Visibility = Visibility.Visible;
                 WallMacroTextBox.Visibility = Visibility.Visible;
+                WallMacroTextBlock.Visibility = Visibility.Visible;
                 PathbtnOBS.Visibility = Visibility.Visible;
                 OBSTextBox.Visibility = Visibility.Visible;
+                OBSTextBlock.Visibility = Visibility.Visible;
             }
         }
 
