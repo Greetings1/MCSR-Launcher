@@ -1,0 +1,5 @@
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\publish\Session Control.exe
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\publish\Session Control.dll
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\publish\Session Control.deps.json
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\publish\Session Control.runtimeconfig.json
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\publish\Session Control.pdb

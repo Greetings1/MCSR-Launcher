@@ -1,0 +1,66 @@
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\Debug\net6.0-windows\Session Control.exe
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\Debug\net6.0-windows\Session Control.deps.json
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\Debug\net6.0-windows\Session Control.runtimeconfig.json
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\Debug\net6.0-windows\Session Control.dll
+C:\Users\Oscar Eriksson\source\repos\Session Control\bin\Debug\net6.0-windows\Session Control.pdb
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.csproj.AssemblyReference.cache
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control_MarkupCompile.cache
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control_MarkupCompile.lref
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.g.resources
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.AssemblyInfoInputs.cache
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.AssemblyInfo.cs
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.csproj.CoreCompileInputs.cache
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.dll
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\refint\Session Control.dll
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.pdb
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control.genruntimeconfig.cache
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\ref\Session Control.dll
+C:\Users\Oscar Eriksson\source\repos\Session Control\obj\Debug\net6.0-windows\Session Control_Content.g.cs
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\bin\Debug\net6.0-windows\Session Control.exe
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\bin\Debug\net6.0-windows\Session Control.deps.json
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\bin\Debug\net6.0-windows\Session Control.runtimeconfig.json
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\bin\Debug\net6.0-windows\Session Control.dll
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\bin\Debug\net6.0-windows\Session Control.pdb
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.csproj.AssemblyReference.cache
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control_Content.g.cs
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control_MarkupCompile.cache
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control_MarkupCompile.lref
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.g.resources
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.AssemblyInfoInputs.cache
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.AssemblyInfo.cs
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.csproj.CoreCompileInputs.cache
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.dll
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\refint\Session Control.dll
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.pdb
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\Session Control.genruntimeconfig.cache
+C:\Users\Oscar Eriksson\Desktop\Testing\Session Control\obj\Debug\net6.0-windows\ref\Session Control.dll
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\bin\Debug\net6.0-windows\Session Control.exe
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\bin\Debug\net6.0-windows\Session Control.deps.json
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\bin\Debug\net6.0-windows\Session Control.runtimeconfig.json
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\bin\Debug\net6.0-windows\Session Control.dll
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\bin\Debug\net6.0-windows\Session Control.pdb
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.csproj.AssemblyReference.cache
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control_Content.g.cs
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control_MarkupCompile.cache
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control_MarkupCompile.lref
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.g.resources
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.AssemblyInfoInputs.cache
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.AssemblyInfo.cs
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.csproj.CoreCompileInputs.cache
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.dll
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\refint\Session Control.dll
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.pdb
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\Session Control.genruntimeconfig.cache
+C:\Users\Oscar Eriksson\Desktop\MCSR Launcher\Session Control\obj\Debug\net6.0-windows\ref\Session Control.dll

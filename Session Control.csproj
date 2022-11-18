@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Session_Control</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Enderpearl.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Enderpearl.png" />
+    <None Remove="unnamed.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Enderpearl.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Enderpearl.png" />
+    <Resource Include="unnamed.jpg" />
+  </ItemGroup>
+
+</Project>
