@@ -26,9 +26,11 @@ namespace Session_Control
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static MainWindow AppWindow;
         public MainWindow()
         {
             InitializeComponent();
+            AppWindow = this;
 
             CheckBoxSetter();
 

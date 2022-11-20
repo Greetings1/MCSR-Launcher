@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Session_Control;
 using System.IO;
+using System.Threading;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Session_Control
 {
@@ -19,7 +21,7 @@ namespace Session_Control
             //Console.ReadLine();
 
             kill();
-            world_deletion();
+            Thread_world_deletion();
         }
         public static void kill()
         {
@@ -28,6 +30,14 @@ namespace Session_Control
             killTask("MultiMC", true);
             killTask("obs64", true);
             killTask("resetTracker", true);
+        }
+
+        public static void Thread_world_deletion()
+        {
+
+            Thread thread = new Thread(world_deletion);
+            thread.IsBackground = true;
+            thread.Start();
         }
 
         public static void world_deletion()
@@ -51,7 +61,10 @@ namespace Session_Control
                             }
                         }
                     }
-                    //Console.WriteLine(deleted_worlds);
+                    int deletedWorldsFromFile = Convert.ToInt32(File.ReadAllText(Environment.CurrentDirectory + "\\DeletedWorlds.txt"));
+                    deletedWorldsFromFile = deletedWorldsFromFile + deleted_worlds;
+                    File.WriteAllText(Environment.CurrentDirectory + "\\DeletedWorlds.txt", deletedWorldsFromFile.ToString());
+                    MessageBox.Show("This session : " + deleted_worlds + "\nTotal: " + deletedWorldsFromFile, "Deleted worlds    ");
                 }
                 catch (Exception)
                 {
