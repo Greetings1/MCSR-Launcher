@@ -18,8 +18,9 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Security.Cryptography.X509Certificates;
+using MCSRLauncherBackup;
 
-namespace Session_Control
+namespace MCSRLauncherBackup
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -44,8 +45,8 @@ namespace Session_Control
 
             try
             {
-                InstanceFormatTextBox.Text = File.ReadAllText(Environment.CurrentDirectory + "\\InstanceFormat.txt");
-                Settings.Instance_Format = File.ReadAllText(Environment.CurrentDirectory + "\\InstanceFormat.txt");
+                InstanceFormatTextBox.Text = File.ReadAllText(Environment.CurrentDirectory + "\\Data\\InstanceFormat.txt");
+                Settings.Instance_Format = File.ReadAllText(Environment.CurrentDirectory + "\\Data\\InstanceFormat.txt");
             }
             catch (Exception)
             {
@@ -80,31 +81,16 @@ namespace Session_Control
 
         private void Settingsbtn_Click(object sender, RoutedEventArgs e)
         {
-            if (SyncSettingsCbx.Visibility == Visibility.Visible)
+            if (CheckBoxGrid.Visibility == Visibility.Visible)
             {
-                SyncSettingsCbx.Visibility = Visibility.Hidden;
-                NinBotCbx.Visibility = Visibility.Hidden;
-                TrackerCbx.Visibility = Visibility.Hidden;
-                InstancesCbx.Visibility = Visibility.Hidden;
-                MacroCbx.Visibility = Visibility.Hidden;
-                ObsCbx.Visibility = Visibility.Hidden;
-                DelOldWorCbx.Visibility = Visibility.Hidden;
-                cboNumZones.Visibility = Visibility.Hidden;
-                InstanceFormatTextBlock.Visibility = Visibility.Hidden;
-                InstanceFormatTextBox.Visibility = Visibility.Hidden;
+                CheckBoxGrid.Visibility = Visibility.Collapsed;
             }
             else
             {
-                SyncSettingsCbx.Visibility = Visibility.Visible;
-                NinBotCbx.Visibility = Visibility.Visible;
-                TrackerCbx.Visibility = Visibility.Visible;
-                InstancesCbx.Visibility = Visibility.Visible;
-                MacroCbx.Visibility = Visibility.Visible;
-                ObsCbx.Visibility = Visibility.Visible;
-                DelOldWorCbx.Visibility = Visibility.Visible;
-                cboNumZones.Visibility= Visibility.Visible;
-                InstanceFormatTextBlock.Visibility = Visibility.Visible;
-                InstanceFormatTextBox.Visibility = Visibility.Visible;
+                CheckBoxGrid.Visibility = Visibility.Visible;
+                PathSetterGrid.Visibility = Visibility.Collapsed;
+                StandardSettingsGrid.Visibility = Visibility.Collapsed;
+                MacroGrid.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -147,7 +133,7 @@ namespace Session_Control
         {
             try
             {
-                string[] CheckboxState = File.ReadAllLines(Environment.CurrentDirectory + "\\CheckBoxes.txt");
+                string[] CheckboxState = File.ReadAllLines(Environment.CurrentDirectory + "\\Data\\CheckBoxes.txt");
 
                 SyncSettingsCbx.IsChecked = Convert.ToBoolean(CheckboxState[0]);
                 NinBotCbx.IsChecked = Convert.ToBoolean(CheckboxState[1]);
@@ -194,7 +180,7 @@ namespace Session_Control
                 }
                 else
                 {
-                        MessageBox.Show("Could not start instances. Path or instance format missing or invalid.");
+                    MessageBox.Show("Could not start instances. Path or instance format missing or invalid.");
                 }
 
 
@@ -227,16 +213,16 @@ namespace Session_Control
         }
 
         protected override void OnClosed(EventArgs e)
-        {                                             
-            base.OnClosed(e);                         
-                                                      
-            Application.Current.Shutdown();           
+        {
+            base.OnClosed(e);
+
+            Application.Current.Shutdown();
         }
 
         private void cboNumZonesChanged(object sender, SelectionChangedEventArgs e)
         {
             Settings.instance_count = cboNumZones.SelectedIndex + 1;
-            File.WriteAllText(Environment.CurrentDirectory + "\\InstanceCount.txt", Convert.ToString(Settings.instance_count));
+            File.WriteAllText(Environment.CurrentDirectory + "\\Data\\InstanceCount.txt", Convert.ToString(Settings.instance_count));
         }
 
         private void FilePathbtnSSS_Click(object sender, RoutedEventArgs e)
@@ -332,53 +318,22 @@ namespace Session_Control
 
         private void PathHider_Click(object sender, RoutedEventArgs e)
         {
-            if (FilePathbtnSSS.Visibility == Visibility.Visible)
+            if (PathSetterGrid.Visibility == Visibility.Visible)
             {
-                FilePathbtnSSS.Visibility = Visibility.Hidden;
-                SSSTextbox.Visibility = Visibility.Hidden;
-                SSSTextblock.Visibility = Visibility.Hidden;
-                PathbtnNinbot.Visibility = Visibility.Hidden;
-                NinBotTextBox.Visibility = Visibility.Hidden;
-                NinBotTextBlock.Visibility = Visibility.Hidden;
-                FilebtnTracker.Visibility = Visibility.Hidden;
-                TrackerTextBox.Visibility = Visibility.Hidden;
-                TrackerTextBlock.Visibility = Visibility.Hidden;
-                PathbtnMultiMC.Visibility = Visibility.Hidden;
-                MultiMCTextBox.Visibility = Visibility.Hidden;
-                MultiMCTextBlock.Visibility = Visibility.Hidden;
-                PathbtnTheWall.Visibility = Visibility.Hidden;
-                WallMacroTextBox.Visibility = Visibility.Hidden;
-                WallMacroTextBlock.Visibility = Visibility.Hidden;
-                PathbtnOBS.Visibility = Visibility.Hidden;
-                OBSTextBox.Visibility= Visibility.Hidden;
-                OBSTextBlock.Visibility= Visibility.Hidden;
+                PathSetterGrid.Visibility = Visibility.Collapsed;
             }
             else
             {
-                FilePathbtnSSS.Visibility = Visibility.Visible;
-                SSSTextbox.Visibility = Visibility.Visible;
-                SSSTextblock.Visibility = Visibility.Visible;
-                PathbtnNinbot.Visibility = Visibility.Visible;
-                NinBotTextBox.Visibility = Visibility.Visible;
-                NinBotTextBlock.Visibility = Visibility.Visible;
-                FilebtnTracker.Visibility = Visibility.Visible;
-                TrackerTextBox.Visibility = Visibility.Visible;
-                TrackerTextBlock.Visibility = Visibility.Visible;
-                PathbtnMultiMC.Visibility = Visibility.Visible;
-                MultiMCTextBox.Visibility = Visibility.Visible;
-                MultiMCTextBlock.Visibility = Visibility.Visible;
-                PathbtnTheWall.Visibility = Visibility.Visible;
-                WallMacroTextBox.Visibility = Visibility.Visible;
-                WallMacroTextBlock.Visibility = Visibility.Visible;
-                PathbtnOBS.Visibility = Visibility.Visible;
-                OBSTextBox.Visibility = Visibility.Visible;
-                OBSTextBlock.Visibility = Visibility.Visible;
+                PathSetterGrid.Visibility = Visibility.Visible;
+                CheckBoxGrid.Visibility = Visibility.Collapsed;
+                StandardSettingsGrid.Visibility = Visibility.Collapsed;
+                MacroGrid.Visibility = Visibility.Collapsed;
             }
         }
 
         private void InstanceFormatTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            File.WriteAllText(Environment.CurrentDirectory + "\\InstanceFormat.txt", InstanceFormatTextBox.Text);
+            File.WriteAllText(Environment.CurrentDirectory + "\\Data\\InstanceFormat.txt", InstanceFormatTextBox.Text);
         }
 
         private void MacroReloadbtn_Click(object sender, RoutedEventArgs e)
@@ -451,6 +406,36 @@ namespace Session_Control
                 MessageBox.Show("Could not find filenames. Path missing or invalid.");
             }
 
+        }
+
+        private void StandardSettingsandMacro_Click(object sender, RoutedEventArgs e)
+        {
+            if (StandardSettingsGrid.Visibility == Visibility.Visible)
+            {
+                StandardSettingsGrid.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                StandardSettingsGrid.Visibility = Visibility.Visible;
+                CheckBoxGrid.Visibility = Visibility.Collapsed;
+                PathSetterGrid.Visibility = Visibility.Collapsed;
+                MacroGrid.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void Macro_Click(object sender, RoutedEventArgs e)
+        {
+            if (MacroGrid.Visibility == Visibility.Visible)
+            {
+                MacroGrid.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                MacroGrid.Visibility = Visibility.Visible;
+                StandardSettingsGrid.Visibility = Visibility.Collapsed;
+                CheckBoxGrid.Visibility = Visibility.Collapsed;
+                PathSetterGrid.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

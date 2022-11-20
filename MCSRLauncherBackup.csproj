@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PackageIcon>Enderpearl.ico</PackageIcon>
+    <ApplicationIcon>Enderpearl.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Enderpearl.png" />
+    <None Remove="minecraft-2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Enderpearl.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Enderpearl.ico" />
+    <Resource Include="Enderpearl.png" />
+    <Resource Include="minecraft-2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Enderpearl.ico">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

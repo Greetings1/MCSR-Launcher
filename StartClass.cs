@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Session_Control
+namespace MCSRLauncherBackup
 {
     internal class StartClass
     {
@@ -188,7 +188,7 @@ namespace Session_Control
 
                     Thread.Sleep(2000);
 
-                    processStarter(Environment.CurrentDirectory, "enter.ahk");
+                    processStarter(Environment.CurrentDirectory + "\\Utils", "enter.ahk");
 
                     while (true)
                     {
@@ -220,7 +220,7 @@ namespace Session_Control
                     }
 
                     Thread.Sleep(3000);
-                    processStarter(Environment.CurrentDirectory, "paus.ahk");
+                    processStarter(Environment.CurrentDirectory + "\\Utils", "paus.ahk");
                 }
                 else
                 {
@@ -255,7 +255,7 @@ namespace Session_Control
                 }
                 else
                 {
-                        MessageBox.Show("Could not run WallMacro. Path missing or invalid.");
+                    MessageBox.Show("Could not run WallMacro. Path missing or invalid.");
                 }
 
             }

@@ -1,0 +1,44 @@
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.csproj.AssemblyReference.cache
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup_MarkupCompile.cache
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup_MarkupCompile.lref
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.exe
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.deps.json
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.runtimeconfig.json
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.pdb
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.g.resources
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.AssemblyInfoInputs.cache
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.AssemblyInfo.cs
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.csproj.CoreCompileInputs.cache
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\refint\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.pdb
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.genruntimeconfig.cache
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\ref\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\source\repos\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup_Content.g.cs
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.exe
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.deps.json
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.runtimeconfig.json
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\bin\Debug\net6.0-windows\MCSRLauncherBackup.pdb
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.csproj.AssemblyReference.cache
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup_Content.g.cs
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup_MarkupCompile.cache
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup_MarkupCompile.lref
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.g.resources
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.AssemblyInfoInputs.cache
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.AssemblyInfo.cs
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.csproj.CoreCompileInputs.cache
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\refint\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.pdb
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\MCSRLauncherBackup.genruntimeconfig.cache
+C:\Users\Oscar Eriksson\Desktop\Experimenting with compiling\MCSRLauncherBackup\obj\Debug\net6.0-windows\ref\MCSRLauncherBackup.dll

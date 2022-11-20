@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.ComponentModel;
 using System.Security.Cryptography.X509Certificates;
+using MCSRLauncherBackup;
 
-namespace Session_Control
+namespace MCSRLauncherBackup
 {
     internal class MiscFunctionality
     {
         public static void CheckBoxGetter()
         {
-            string[] Checkboxes = File.ReadAllLines(Environment.CurrentDirectory + "\\CheckBoxes.txt");
+            string[] Checkboxes = File.ReadAllLines(Environment.CurrentDirectory + "\\Data\\CheckBoxes.txt");
 
             Settings.settings_sync = Convert.ToBoolean(Checkboxes[0]);
             Settings.start_ninjabrain = Convert.ToBoolean(Checkboxes[1]);
@@ -55,7 +56,7 @@ namespace Session_Control
                     break;
             }
 
-            File.WriteAllText(Environment.CurrentDirectory + "\\CheckBoxes.txt", $"" +
+            File.WriteAllText(Environment.CurrentDirectory + "\\Data\\CheckBoxes.txt", $"" +
                 $"{Settings.settings_sync}" +
                 $"\n{Settings.start_ninjabrain}" +
                 $"\n{Settings.start_Tracker}" +
@@ -69,7 +70,7 @@ namespace Session_Control
         {
             try
             {
-                string instanceCount = File.ReadAllText(Environment.CurrentDirectory + "\\InstanceCount.txt");
+                string instanceCount = File.ReadAllText(Environment.CurrentDirectory + "\\Data\\InstanceCount.txt");
 
                 Settings.instance_count = Convert.ToInt32(instanceCount);
             }
@@ -84,7 +85,7 @@ namespace Session_Control
         {
             try
             {
-                string[] pathsInTxt = File.ReadAllLines(Environment.CurrentDirectory + "\\Paths.txt");
+                string[] pathsInTxt = File.ReadAllLines(Environment.CurrentDirectory + "\\Data\\Paths.txt");
 
                 Settings.StandardSettings = pathsInTxt[0];
                 Settings.NinjaBot = pathsInTxt[1];
@@ -128,7 +129,7 @@ namespace Session_Control
                         break;
                 }
 
-                File.WriteAllText(Environment.CurrentDirectory + "\\Paths.txt", $"{Settings.StandardSettings}\n{Settings.NinjaBot}\n{Settings.Tracker}\n{Settings.MultiMC}\n{Settings.WallMacro}\n{Settings.OBS}");
+                File.WriteAllText(Environment.CurrentDirectory + "\\Data\\Paths.txt", $"{Settings.StandardSettings}\n{Settings.NinjaBot}\n{Settings.Tracker}\n{Settings.MultiMC}\n{Settings.WallMacro}\n{Settings.OBS}");
             }
         }
 
@@ -138,26 +139,63 @@ namespace Session_Control
             {
                 int a = Settings.NinjaBot.LastIndexOf(@"\");
                 Settings.NinjaBotSplit[0] = Settings.NinjaBot.Substring(0, a); Settings.NinjaBotSplit[1] = Settings.NinjaBot.Substring(a + 1);
+            }
+            catch (Exception)
+            {
 
+            }
+
+            try
+            {
                 int b = Settings.Tracker.LastIndexOf(@"\");
                 Settings.TrackerSplit[0] = Settings.Tracker.Substring(0, b); Settings.TrackerSplit[1] = Settings.Tracker.Substring(b + 1);
+            }
+            catch (Exception)
+            {
 
+            }
+
+            try
+            {
                 int c = Settings.WallMacro.LastIndexOf(@"\");
                 Settings.WallMacroSplit[0] = Settings.WallMacro.Substring(0, c); Settings.WallMacroSplit[1] = Settings.WallMacro.Substring(c + 1);
+            }
+            catch (Exception)
+            {
 
+            }
+
+            try
+            {
                 int d = Settings.OBS.LastIndexOf(@"\");
                 Settings.OBSSplit[0] = Settings.OBS.Substring(0, d); Settings.OBSSplit[1] = Settings.OBS.Substring(d + 1);
+            }
+            catch (Exception)
+            {
 
+            }
+
+            try
+            {
                 int e = Settings.MultiMC.LastIndexOf(@"\");
                 Settings.MultiMCSplit[0] = Settings.MultiMC.Substring(0, e); Settings.MultiMCSplit[1] = Settings.MultiMC.Substring(e + 1);
+            }
+            catch (Exception)
+            {
 
+            }
+
+            try
+            {
                 int f = Settings.StandardSettings.LastIndexOf(@"\");
                 Settings.StandardSettingsSplit[0] = Settings.StandardSettings.Substring(0, f); Settings.StandardSettingsSplit[1] = Settings.StandardSettings.Substring(f + 1);
             }
             catch (Exception)
             {
-                //MessageBox.Show("Could not find valid paths");
+
             }
+
+
 
         }
 
@@ -181,7 +219,7 @@ namespace Session_Control
         {
             try
             {
-                string wallSettings = File.ReadAllText(Settings.WallMacroSplit[0] + "\\settings.ahk");
+                string wallSettings = File.ReadAllText(Settings.WallMacroSplit[0] + "\\Data\\settings.ahk");
 
                 bool isChecked = false;
 
@@ -195,7 +233,7 @@ namespace Session_Control
                 {
                     MessageBox.Show("WallMacro path missing or invalid.");
                 }
-                    return false;
+                return false;
             }
         }
     }

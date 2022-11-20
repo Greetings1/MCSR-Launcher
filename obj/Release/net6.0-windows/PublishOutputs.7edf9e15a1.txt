@@ -1,0 +1,5 @@
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\MCSRLauncherBackup.exe
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\MCSRLauncherBackup.dll
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\MCSRLauncherBackup.deps.json
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\MCSRLauncherBackup.runtimeconfig.json
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\MCSRLauncherBackup.pdb

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Oscar Eriksson\\Desktop\\MCSR Launcher\\Session Control\\Session Control.csproj",
-      "projectName": "Session Control",
-      "projectPath": "C:\\Users\\Oscar Eriksson\\Desktop\\MCSR Launcher\\Session Control\\Session Control.csproj",
+      "projectUniqueName": "C:\\Users\\Oscar Eriksson\\Desktop\\Experimenting with compiling\\MCSRLauncherBackup\\MCSRLauncherBackup.csproj",
+      "projectName": "MCSRLauncherBackup",
+      "projectPath": "C:\\Users\\Oscar Eriksson\\Desktop\\Experimenting with compiling\\MCSRLauncherBackup\\MCSRLauncherBackup.csproj",
       "packagesPath": "C:\\Users\\Oscar Eriksson\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Oscar Eriksson\\Desktop\\MCSR Launcher\\Session Control\\obj\\",
+      "outputPath": "C:\\Users\\Oscar Eriksson\\Desktop\\Experimenting with compiling\\MCSRLauncherBackup\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Oscar Eriksson\\AppData\\Roaming\\NuGet\\NuGet.Config",

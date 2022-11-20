@@ -5,16 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
-using Session_Control;
 using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using MCSRLauncherBackup;
+using System.Runtime.CompilerServices;
 
-namespace Session_Control
+namespace MCSRLauncherBackup
 {
     internal class EndClass
     {
+        public static bool DOWDone = false;
         public static void End()
         {
             //Console.WriteLine("Press enter to end session");
@@ -35,9 +37,12 @@ namespace Session_Control
         public static void Thread_world_deletion()
         {
 
-            Thread thread = new Thread(world_deletion);
-            thread.IsBackground = true;
-            thread.Start();
+            Thread DOWthread = new Thread(world_deletion);
+            DOWthread.IsBackground = true;
+            Thread DOWLoadingthread = new Thread(DOWLoading);
+            DOWLoadingthread.IsBackground = true;
+            DOWLoadingthread.Start();
+            DOWthread.Start();
         }
 
         public static void world_deletion()
@@ -61,15 +66,64 @@ namespace Session_Control
                             }
                         }
                     }
-                    int deletedWorldsFromFile = Convert.ToInt32(File.ReadAllText(Environment.CurrentDirectory + "\\DeletedWorlds.txt"));
+                    int deletedWorldsFromFile = Convert.ToInt32(File.ReadAllText(Environment.CurrentDirectory + "\\Data\\DeletedWorlds.txt"));
                     deletedWorldsFromFile = deletedWorldsFromFile + deleted_worlds;
-                    File.WriteAllText(Environment.CurrentDirectory + "\\DeletedWorlds.txt", deletedWorldsFromFile.ToString());
+                    File.WriteAllText(Environment.CurrentDirectory + "\\Data\\DeletedWorlds.txt", deletedWorldsFromFile.ToString());
                     MessageBox.Show("This session : " + deleted_worlds + "\nTotal: " + deletedWorldsFromFile, "Deleted worlds    ");
+
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Could not delete saves. Path missing or invalid.");
                 }
+                //catch ()
+                //{
+
+                //}
+                DOWDone = true;
+            }
+        }
+
+        public static void DOWLoading()
+        {
+            if (Settings.delete_old_worlds)
+            {
+                while (DOWDone == false)
+                {
+                    Application.Current.Dispatcher.Invoke(() => { MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds"; });
+                    Thread.Sleep(600);
+                    Application.Current.Dispatcher.Invoke(() => { MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds ."; });
+                    Thread.Sleep(600);
+                    Application.Current.Dispatcher.Invoke(() => { MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds . ."; });
+                    Thread.Sleep(600);
+                    Application.Current.Dispatcher.Invoke(() => { MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds . . ."; });
+                    Thread.Sleep(600);
+                }
+
+                Application.Current.Dispatcher.Invoke(() => { MainWindow.AppWindow.WorldDeletionsTbk.Text = ""; });
+                Application.Current.Dispatcher.Invoke(() => { MainWindow.AppWindow.DOWDonetbk.Visibility = Visibility.Visible; });
+                Thread.Sleep(5000);
+                Application.Current.Dispatcher.Invoke(() => { MainWindow.AppWindow.DOWDonetbk.Visibility = Visibility.Hidden; });
+
+                //while (DOWDone == false)
+                //    {
+                //        MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds";
+                //        Thread.Sleep(600);
+                //        MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds .";
+                //        Thread.Sleep(600);
+                //        MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds . .";
+                //        Thread.Sleep(600);
+                //        MainWindow.AppWindow.WorldDeletionsTbk.Text = "Deleting worlds . . .";
+                //        Thread.Sleep(600);
+                //    }
+                //    DOWDone = false;
+                //    MainWindow.AppWindow.WorldDeletionsTbk.Text = "";
+                //    MainWindow.AppWindow.DOWDonetbk.Visibility = Visibility.Visible;
+                //    Thread.Sleep(5000);
+                //    MainWindow.AppWindow.DOWDonetbk.Visibility = Visibility.Hidden;
+
+
+
 
             }
         }

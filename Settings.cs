@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Session_Control
+namespace MCSRLauncherBackup
 {
     internal class Settings
     {
@@ -40,9 +40,9 @@ namespace Session_Control
             OBSSplit = new string[2],
             StandardSettingsSplit = new string[2];
 
-            //instance_format = "Instance",                                            // The name format of your instances (i have instance1, instance2 etc so its 'instance')
-            //mmc = @"C:\MultiMC",                                                     // Change this to match your MultiMc.exe location
-            //settings_folder = @"C:\Users\Oscar Eriksson\Desktop\MCSR\Startup",   // A folder where your standartoptions.txt is located in (You can just put it in mod_folder)
+        //instance_format = "Instance",                                            // The name format of your instances (i have instance1, instance2 etc so its 'instance')
+        //mmc = @"C:\MultiMC",                                                     // Change this to match your MultiMc.exe location
+        //settings_folder = @"C:\Users\Oscar Eriksson\Desktop\MCSR\Startup",   // A folder where your standartoptions.txt is located in (You can just put it in mod_folder)
 
         // can contain spaces, put double backslash (leave empty "" if not using, would recomend to put the all into the same folder for simplicity)
         //ninja_bot = @"C:\Users\Oscar Eriksson\Desktop\MCSR\Startup",                        // location of your ninja bot
