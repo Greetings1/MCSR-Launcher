@@ -1,18 +1,15 @@
+﻿#SingleInstance, Force
 #NoEnv
-#SingleInstance Force
-
+SetWorkingDir, %A_ScriptDir%
 SetKeyDelay, 0
-SetWinDelay, 1
-SetTitleMatchMode, 2
 
+WinGet, windows, List
 
-WinGet, all, list
-Loop, %all%
-{
-  WinGet, pid, PID, % "ahk_id " all%A_Index%
-  WinGetTitle, title, ahk_pid %pid%
-  if (InStr(title, "Minecraft*")) {
-    ControlSend, ahk_parent, {Blind}{Shift down}{Tab}{Shift up}{Enter}, ahk_pid %pid%
-  }
+Loop, %windows% {
+    WinGet, pid, PID, % "ahk_id " windows%A_Index%
+    WinGetTitle, title, ahk_pid %pid%
+    if (InStr(title, "Minecraft")) {
+        WinMinimize, ahk_pid %pid%
+        ControlSend,, {Blind}{Tab 8}{Enter}, ahk_pid %pid%
+    }
 }
-

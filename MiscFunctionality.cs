@@ -24,6 +24,10 @@ namespace MCSRLauncherBackup
             Settings.reset_macro = Convert.ToBoolean(Checkboxes[4]);
             Settings.start_obs = Convert.ToBoolean(Checkboxes[5]);
             Settings.delete_old_worlds = Convert.ToBoolean(Checkboxes[6]);
+            Settings.start_second_obs = Convert.ToBoolean(Checkboxes[7]);
+            Settings.start_AddApp1 = Convert.ToBoolean(Checkboxes[8]);
+            Settings.start_AddApp2 = Convert.ToBoolean(Checkboxes[9]);
+            Settings.start_AddApp3 = Convert.ToBoolean(Checkboxes[10]);
         }
         public static void CheckBoxes(int CheckboxNr, bool Checked)
         {
@@ -52,6 +56,18 @@ namespace MCSRLauncherBackup
                 case 7:
                     Settings.delete_old_worlds = Checked;
                     break;
+                case 8:
+                    Settings.start_second_obs = Checked;
+                    break;
+                case 9:
+                    Settings.start_AddApp1 = Checked;
+                    break;
+                case 10:
+                    Settings.start_AddApp2 = Checked;
+                    break;
+                case 11:
+                    Settings.start_AddApp3 = Checked;
+                    break;
                 default:
                     break;
             }
@@ -63,7 +79,12 @@ namespace MCSRLauncherBackup
                 $"\n{Settings.start_instances}" +
                 $"\n{Settings.reset_macro}" +
                 $"\n{Settings.start_obs}" +
-                $"\n{Settings.delete_old_worlds}");
+                $"\n{Settings.delete_old_worlds}" +
+                $"\n{Settings.start_second_obs}" +
+                $"\n{Settings.start_AddApp1}" +
+                $"\n{Settings.start_AddApp2}" +
+                $"\n{Settings.start_AddApp3}"
+                );
         }
 
         public static void InstanceNumberGetter()
@@ -93,6 +114,9 @@ namespace MCSRLauncherBackup
                 Settings.MultiMC = pathsInTxt[3];
                 Settings.WallMacro = pathsInTxt[4];
                 Settings.OBS = pathsInTxt[5];
+                Settings.AddApp1 = pathsInTxt[6];
+                Settings.AddApp2 = pathsInTxt[7];
+                Settings.AddApp3 = pathsInTxt[8];
             }
             catch (Exception)
             {
@@ -125,11 +149,29 @@ namespace MCSRLauncherBackup
                     case "OBS":
                         Settings.OBS = inputPath;
                         break;
+                    case "AddApp1":
+                        Settings.AddApp1 = inputPath;
+                        break;
+                    case "AddApp2":
+                        Settings.AddApp2 = inputPath;
+                        break;
+                    case "AddApp3":
+                        Settings.AddApp3= inputPath;
+                        break;
                     default:
                         break;
                 }
 
-                File.WriteAllText(Environment.CurrentDirectory + "\\Data\\Paths.txt", $"{Settings.StandardSettings}\n{Settings.NinjaBot}\n{Settings.Tracker}\n{Settings.MultiMC}\n{Settings.WallMacro}\n{Settings.OBS}");
+                File.WriteAllText(Environment.CurrentDirectory + "\\Data\\Paths.txt", $"" +
+                    $"{Settings.StandardSettings}\n" +
+                    $"{Settings.NinjaBot}\n" +
+                    $"{Settings.Tracker}\n" +
+                    $"{Settings.MultiMC}\n" +
+                    $"{Settings.WallMacro}\n" +
+                    $"{Settings.OBS}\n" +
+                    $"{Settings.AddApp1}\n" +
+                    $"{Settings.AddApp2}\n" +
+                    $"{Settings.AddApp3}");
             }
         }
 
@@ -195,7 +237,35 @@ namespace MCSRLauncherBackup
 
             }
 
+            try
+            {
+                int a = Settings.AddApp1.LastIndexOf(@"\");
+                Settings.AddApp1Split[0] = Settings.AddApp1.Substring(0, a); Settings.AddApp1Split[1] = Settings.AddApp1.Substring(a + 1);
+            }
+            catch (Exception)
+            {
 
+            }
+
+            try
+            {
+                int a = Settings.AddApp2.LastIndexOf(@"\");
+                Settings.AddApp2Split[0] = Settings.AddApp2.Substring(0, a); Settings.AddApp2Split[1] = Settings.AddApp2.Substring(a + 1);
+            }
+            catch (Exception)
+            {
+
+            }
+
+            try
+            {
+                int a = Settings.AddApp3.LastIndexOf(@"\");
+                Settings.AddApp3Split[0] = Settings.AddApp3.Substring(0, a); Settings.AddApp3Split[1] = Settings.AddApp3.Substring(a + 1);
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
 

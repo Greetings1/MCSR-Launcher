@@ -53,6 +53,37 @@ namespace MCSRLauncherBackup
                 MessageBox.Show("Could not find InstanceFormat.txt");
             }
 
+            try
+            {
+                string[] temp = File.ReadAllLines(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt");
+                OBSSceneFormat1TextBox.Text = $"{temp[0]}";
+                try
+                {
+                    OBSSceneFormat2TextBox.Text = $"{temp[1]}";
+                }
+                catch (Exception)
+                {
+                    OBSSceneFormat2TextBox.Text = "";
+                }
+
+
+                Settings.OBSSceneName1 = $"{temp[0]}";
+                try
+                {
+                    Settings.OBSSceneName2 = $"{temp[1]}";
+                }
+                catch (Exception)
+                {
+                    Settings.OBSSceneName2 = "";
+                }
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Could not find OBSSceneFormat.txt");
+            }
+
             WallByPasscbx.IsChecked = MiscFunctionality.ByPassCheckInitalizer(false);
 
             FileNameChanger();
@@ -88,9 +119,10 @@ namespace MCSRLauncherBackup
             else
             {
                 CheckBoxGrid.Visibility = Visibility.Visible;
-                PathSetterGrid.Visibility = Visibility.Collapsed;
-                StandardSettingsGrid.Visibility = Visibility.Collapsed;
-                MacroGrid.Visibility = Visibility.Collapsed;
+                //PathSetterGrid.Visibility = Visibility.Collapsed;
+                //StandardSettingsGrid.Visibility = Visibility.Collapsed;
+                //MacroGrid.Visibility = Visibility.Collapsed;
+                //GeneralOptionsGrid.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -129,6 +161,11 @@ namespace MCSRLauncherBackup
             MiscFunctionality.CheckBoxes(7, Convert.ToBoolean(DelOldWorCbx.IsChecked));
         }
 
+        private void SecondOBS_Checked(object sender, RoutedEventArgs e)
+        {
+            MiscFunctionality.CheckBoxes(8, Convert.ToBoolean(SecondOBScbx.IsChecked));
+        }
+
         private void CheckBoxSetter()
         {
             try
@@ -142,6 +179,10 @@ namespace MCSRLauncherBackup
                 MacroCbx.IsChecked = Convert.ToBoolean(CheckboxState[4]);
                 ObsCbx.IsChecked = Convert.ToBoolean(CheckboxState[5]);
                 DelOldWorCbx.IsChecked = Convert.ToBoolean(CheckboxState[6]);
+                SecondOBScbx.IsChecked = Convert.ToBoolean(CheckboxState[7]);
+                AddApp1cbx.IsChecked = Convert.ToBoolean(CheckboxState[8]);
+                AddApp2cbx.IsChecked = Convert.ToBoolean(CheckboxState[9]);
+                AddApp3cbx.IsChecked = Convert.ToBoolean(CheckboxState[10]);
             }
             catch (Exception)
             {
@@ -197,6 +238,7 @@ namespace MCSRLauncherBackup
             MCtask.RedirectStandardInput = true;
             MCtask.RedirectStandardOutput = true;
             MCtask.RedirectStandardError = true;
+            MCtask.UseShellExecute = false;
             MCtask.WorkingDirectory = Settings.MultiMCSplit[0];
 
             Thread thread = new Thread(RunProcess);
@@ -325,9 +367,10 @@ namespace MCSRLauncherBackup
             else
             {
                 PathSetterGrid.Visibility = Visibility.Visible;
-                CheckBoxGrid.Visibility = Visibility.Collapsed;
-                StandardSettingsGrid.Visibility = Visibility.Collapsed;
-                MacroGrid.Visibility = Visibility.Collapsed;
+                //CheckBoxGrid.Visibility = Visibility.Collapsed;
+                //StandardSettingsGrid.Visibility = Visibility.Collapsed;
+                //MacroGrid.Visibility = Visibility.Collapsed;
+                //GeneralOptionsGrid.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -400,6 +443,9 @@ namespace MCSRLauncherBackup
                 MultiMCTextBox.Text = Settings.MultiMCSplit[1];
                 WallMacroTextBox.Text = Settings.WallMacroSplit[1];
                 OBSTextBox.Text = Settings.OBSSplit[1];
+                AddApp1TextBox.Text = Settings.AddApp1Split[1];
+                AddApp2TextBox.Text = Settings.AddApp2Split[1];
+                AddApp3TextBox.Text = Settings.AddApp3Split[1];
             }
             catch (Exception)
             {
@@ -417,9 +463,10 @@ namespace MCSRLauncherBackup
             else
             {
                 StandardSettingsGrid.Visibility = Visibility.Visible;
-                CheckBoxGrid.Visibility = Visibility.Collapsed;
-                PathSetterGrid.Visibility = Visibility.Collapsed;
-                MacroGrid.Visibility = Visibility.Collapsed;
+                //CheckBoxGrid.Visibility = Visibility.Collapsed;
+                //PathSetterGrid.Visibility = Visibility.Collapsed;
+                //MacroGrid.Visibility = Visibility.Collapsed;
+                //GeneralOptionsGrid.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -432,10 +479,109 @@ namespace MCSRLauncherBackup
             else
             {
                 MacroGrid.Visibility = Visibility.Visible;
-                StandardSettingsGrid.Visibility = Visibility.Collapsed;
-                CheckBoxGrid.Visibility = Visibility.Collapsed;
-                PathSetterGrid.Visibility = Visibility.Collapsed;
+                //StandardSettingsGrid.Visibility = Visibility.Collapsed;
+                //CheckBoxGrid.Visibility = Visibility.Collapsed;
+                //PathSetterGrid.Visibility = Visibility.Collapsed;
+                //GeneralOptionsGrid.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void GeneralOptions_Click(object sender, RoutedEventArgs e)
+        {
+            if (GeneralOptionsGrid.Visibility == Visibility.Visible)
+            {
+                GeneralOptionsGrid.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                GeneralOptionsGrid.Visibility = Visibility.Visible;
+                //StandardSettingsGrid.Visibility = Visibility.Collapsed;
+                //CheckBoxGrid.Visibility = Visibility.Collapsed;
+                //PathSetterGrid.Visibility = Visibility.Collapsed;
+                //MacroGrid.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void AddApp1_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName != "")
+            {
+                Settings.AddApp1 = openFileDialog.FileName;
+                int d = Settings.AddApp1.LastIndexOf(@"\");
+                Settings.AddApp1Split[0] = Settings.AddApp1.Substring(0, d); Settings.AddApp1Split[1] = Settings.AddApp1.Substring(d + 1);
+            }
+
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("AddApp1", openFileDialog.FileName);
+        }
+
+        private void AddApp2_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName != "")
+            {
+                Settings.AddApp2 = openFileDialog.FileName;
+                int d = Settings.AddApp2.LastIndexOf(@"\");
+                Settings.AddApp2Split[0] = Settings.AddApp2.Substring(0, d); Settings.AddApp2Split[1] = Settings.AddApp2.Substring(d + 1);
+            }
+
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("AddApp2", openFileDialog.FileName);
+        }
+
+        private void AddApp3_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new();
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName != "")
+            {
+                Settings.AddApp3 = openFileDialog.FileName;
+                int d = Settings.AddApp3.LastIndexOf(@"\");
+                Settings.AddApp3Split[0] = Settings.AddApp3.Substring(0, d); Settings.AddApp3Split[1] = Settings.AddApp3.Substring(d + 1);
+            }
+
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("AddApp3", openFileDialog.FileName);
+        }
+
+        private void AddApp1cbx_Checked(object sender, RoutedEventArgs e)
+        {
+            MiscFunctionality.CheckBoxes(9, Convert.ToBoolean(AddApp1cbx.IsChecked));
+        }
+
+        private void AddApp2cbx_Checked(object sender, RoutedEventArgs e)
+        {
+            MiscFunctionality.CheckBoxes(10, Convert.ToBoolean(AddApp2cbx.IsChecked));
+        }
+
+        private void AddApp3cbx_Checked(object sender, RoutedEventArgs e)
+        {
+            MiscFunctionality.CheckBoxes(11, Convert.ToBoolean(AddApp3cbx.IsChecked));
+        }
+
+        private void OBSSceneFormat1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string[] OBSSceneNames = File.ReadAllLines(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt");
+
+            try
+            {
+                File.WriteAllText(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt", $"{OBSSceneFormat1TextBox.Text}\n{OBSSceneNames[1]}");
+            }
+            catch (Exception)
+            {
+                File.WriteAllText(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt", $"{OBSSceneFormat1TextBox.Text}\n");
+            }
+
+        }
+
+        private void OBSSceneFormat2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string[] OBSSceneNames = File.ReadAllLines(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt");
+
+            File.WriteAllText(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt", $"{OBSSceneNames[0]}\n{OBSSceneFormat2TextBox.Text}");
         }
     }
 }

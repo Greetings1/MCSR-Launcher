@@ -1,0 +1,7 @@
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\v1.1.1\With Runtime\MCSRLauncherBackup.pdb
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\v1.1.1\With Runtime\D3DCompiler_47_cor3.dll
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\v1.1.1\With Runtime\PenImc_cor3.dll
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\v1.1.1\With Runtime\PresentationNative_cor3.dll
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\v1.1.1\With Runtime\vcruntime140_cor3.dll
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\v1.1.1\With Runtime\wpfgfx_cor3.dll
+C:\Users\Oscar Eriksson\Desktop\Finished application hopefully\v1.1.1\With Runtime\MCSRLauncherBackup.exe

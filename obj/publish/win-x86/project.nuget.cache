@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iLewejfv/5KnE9QzxJBm5CkrWy13e9ysGjzgmjQZt9GDCOV8x+GOf6LlOvRaN4Urc5ORX7oBlqKudR+9Up4dyA==",
+  "dgSpecHash": "xkig8D3Wn/7j5kexLX9ft3mm8ff9oEeZeW/bBG7W1M2Fo2usDX0HYFa7wCeTz58FZxDQkkqur9bPzucy+iuzIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oscar Eriksson\\Desktop\\Experimenting with compiling\\MCSRLauncherBackup\\MCSRLauncherBackup.csproj",
+  "projectFilePath": "C:\\Users\\Oscar Eriksson\\Desktop\\MCSR Launcher\\MCSRLauncherBackup\\MCSRLauncherBackup.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oscar Eriksson\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.8\\microsoft.netcore.app.runtime.win-x86.6.0.8.nupkg.sha512",
     "C:\\Users\\Oscar Eriksson\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.8\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.8.nupkg.sha512",

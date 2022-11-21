@@ -19,7 +19,11 @@ namespace MCSRLauncherBackup
             start_instances,    // Set to 1 to make it start up your instances (only works for MultiMc set to 0 if not using it)
             reset_macro,        // Set to 1 if using a reset macro
             start_obs,          // Set to 1 if using obs
-            delete_old_worlds;  // Set to 1 to make it delete your worlds
+            start_second_obs,
+            delete_old_worlds,  // Set to 1 to make it delete your worlds
+            start_AddApp1,
+            start_AddApp2,
+            start_AddApp3;
         public static int
             instance_count; // Change to match amount of instances
 
@@ -30,7 +34,12 @@ namespace MCSRLauncherBackup
             MultiMC,
             WallMacro,
             OBS,
-            Instance_Format;
+            OBSSceneName1,
+            OBSSceneName2,
+            Instance_Format,
+            AddApp1,
+            AddApp2,
+            AddApp3;
 
         public static string[]
             NinjaBotSplit = new string[2],
@@ -38,7 +47,10 @@ namespace MCSRLauncherBackup
             MultiMCSplit = new string[2],
             WallMacroSplit = new string[2],
             OBSSplit = new string[2],
-            StandardSettingsSplit = new string[2];
+            StandardSettingsSplit = new string[2],
+            AddApp1Split = new string[2],
+            AddApp2Split = new string[2],
+            AddApp3Split = new string[2];
 
         //instance_format = "Instance",                                            // The name format of your instances (i have instance1, instance2 etc so its 'instance')
         //mmc = @"C:\MultiMC",                                                     // Change this to match your MultiMc.exe location

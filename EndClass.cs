@@ -58,7 +58,7 @@ namespace MCSRLauncherBackup
 
                         foreach (var saveFile in dir.GetDirectories())
                         {
-                            if (Regex.IsMatch(saveFile.Name, @"^(Random Speedrun #[0-9]{1,7}$)|(^New World$)"))
+                            if (Regex.IsMatch(saveFile.Name, @"^([a-öA-Ö]{0,20}\s?Speedrun\s?#[0-9]{1,7}$)|(^[Nn]ew [Ww]orld$)"))
                             {
                                 saveFile.Delete(true);
                                 //Console.WriteLine("Deleted \"" + saveFile.Name + "\" in instance " + i);
@@ -132,8 +132,6 @@ namespace MCSRLauncherBackup
         {
             foreach (var process in Process.GetProcesses())
             {
-
-
                 if (process.ProcessName.Contains(taskName))
                 {
                     //Console.WriteLine("Killed: " + process.ProcessName);

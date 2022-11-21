@@ -19,7 +19,6 @@
 
         <Rectangle HorizontalAlignment="Left" Height="474" VerticalAlignment="Center" Width="164" Stroke="Black" Fill="#FF390848" Margin="-10,0,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="99" Margin="154,375,0,0" VerticalAlignment="Top" Width="646" Stroke="Black" Fill="#FF390856"/>
-        <Rectangle HorizontalAlignment="Left" Height="34" Width="185" Margin="600,394,0,0" VerticalAlignment="Top" Stroke="White" Fill="#FFB329EA" StrokeThickness="2"/>
         <Button x:Name="Startbtn" Content="Start" FontSize="48" Background="#FF8729EA" Foreground="White" BorderBrush="White" BorderThickness="2"
                 HorizontalAlignment="Left" Margin="397,330,0,0" VerticalAlignment="Top" Height="80" Width="160" Click="Start_btn" FontWeight="Bold" 
                 />
@@ -27,100 +26,136 @@
                 HorizontalAlignment="Left" Margin="212,384,0,0" VerticalAlignment="Top" Height="60" Width="140" FontWeight="Bold" Click="Kill_btn"
                 />
         <TextBlock HorizontalAlignment="Left" Text="Creator: Greetings_1" VerticalAlignment="Top" Margin="688,0,0,0" Foreground="#FFA2A2A2" Height="16" Width="107"/>
-        <TextBlock x:Name="WorldDeletionsTbk" HorizontalAlignment="Left" Margin="610,400,0,0" Text="" VerticalAlignment="Top" Foreground="White" FontSize="14" FontWeight="Bold" Height="20" Width="150"/>
-        <TextBlock x:Name="DOWDonetbk" HorizontalAlignment="Left" Margin="610,410,0,0" Text="World Deletion Finished" VerticalAlignment="Top" Foreground="#FF22F522" FontSize="14" FontWeight="Bold" Height="19" Width="159" Visibility="Hidden"/>
+        <Grid HorizontalAlignment="Left" Height="34" Margin="583,393,0,0" VerticalAlignment="Top" Width="185">
+            <Rectangle HorizontalAlignment="Center" Height="34" Width="185" VerticalAlignment="Center" Stroke="White" Fill="#FFB329EA" StrokeThickness="2"/>
+            <TextBlock x:Name="WorldDeletionsTbk" HorizontalAlignment="Left" Margin="10,0,0,0" Text="" VerticalAlignment="Center" Foreground="White" FontSize="14" FontWeight="Bold" Height="20" Width="150"/>
+            <TextBlock x:Name="DOWDonetbk" HorizontalAlignment="Left" Margin="10,6,0,0" Text="World Deletion Finished" VerticalAlignment="Top" Foreground="#FF22F522" FontSize="14" FontWeight="Bold" Height="19" Width="159" Visibility="Hidden"/>
+
+
+        </Grid>
 
 
         <TextBlock HorizontalAlignment="Left" Text="v1.1.0" VerticalAlignment="Top" Margin="765,16,0,0" Foreground="#FFA2A2A2" Height="16" Width="30"/>
 
-        <StackPanel Margin="0,0,661,0">
-            <Button x:Name="Settingsbtn" Content="Startup Settings" Height="41" Width="120" FontWeight="Bold" FontSize="14" Click="Settingsbtn_Click" Opacity="0.75" Margin="0,10,0,0" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
-            <Grid x:Name="CheckBoxGrid" Height="168" Width="120" Visibility="Collapsed">
-                <CheckBox x:Name="SyncSettingsCbx" Content="Sync Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="100" Background="White" Foreground="White" Checked="SyncSettingsCbx_Checked" Unchecked="SyncSettingsCbx_Checked"/>
-                <CheckBox x:Name="NinBotCbx" Content="NinjaBot" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="NinBotCbx_Checked" Unchecked="NinBotCbx_Checked"/>
-                <CheckBox x:Name="TrackerCbx" Content="Tracker" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="TrackerCbx_Checked" Unchecked="TrackerCbx_Checked"/>
-                <CheckBox x:Name="InstancesCbx" Content="Instances" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="InstancesCbx_Checked" Unchecked="InstancesCbx_Checked"/>
-                <CheckBox x:Name="MacroCbx" Content="Macro" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="MacroCbx_Checked" Unchecked="MacroCbx_Checked"/>
-                <CheckBox x:Name="ObsCbx" Content="OBS" HorizontalAlignment="Left" Margin="0,136,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="ObsCbx_Checked" Unchecked="ObsCbx_Checked"/>
-                <CheckBox x:Name="DelOldWorCbx" Content="Delete Old Worlds" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" Height="16" Width="120" Background="White" Foreground="White" Checked="DelOldWorCbx_Checked" Unchecked="DelOldWorCbx_Checked"/>
-                <ComboBox Background="#FFB7B39D" Height="18" x:Name="cboNumZones" Width="40" HorizontalAlignment="Left" Margin="4,64,0,0" VerticalAlignment="Top"  FontSize="10" SelectionChanged="cboNumZonesChanged">
-                    <ComboBox.ItemsSource>
-                        <x:Array Type="{x:Type sys:Int32}">
-                            <sys:Int32>1</sys:Int32>
-                            <sys:Int32>2</sys:Int32>
-                            <sys:Int32>3</sys:Int32>
-                            <sys:Int32>4</sys:Int32>
-                            <sys:Int32>5</sys:Int32>
-                            <sys:Int32>6</sys:Int32>
-                            <sys:Int32>7</sys:Int32>
-                            <sys:Int32>8</sys:Int32>
-                            <sys:Int32>9</sys:Int32>
-                            <sys:Int32>10</sys:Int32>
-                            <sys:Int32>11</sys:Int32>
-                            <sys:Int32>12</sys:Int32>
-                            <sys:Int32>13</sys:Int32>
-                            <sys:Int32>14</sys:Int32>
-                            <sys:Int32>15</sys:Int32>
-                            <sys:Int32>16</sys:Int32>
-                        </x:Array>
-                    </ComboBox.ItemsSource>
-                </ComboBox>
-                <TextBox x:Name="InstanceFormatTextBox" HorizontalAlignment="Center" Height="18" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="InstanceFormatTextBox_TextChanged" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.7"/>
-                <TextBlock x:Name="InstanceFormatTextBlock" HorizontalAlignment="Left" Margin="4,83,0,0" TextWrapping="Wrap" Text="Instance format" VerticalAlignment="Top" Width="90" Foreground="White"/>
-            </Grid>
-            <Button x:Name="PathHider" Content="Application &#xa;     Paths" Opacity="0.75" Height="41" Width="120" FontWeight="Bold" FontSize="14" Margin="0,10,0,0" Click="PathHider_Click" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
-            <Grid x:Name="PathSetterGrid" Height="169" Width="136" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="41*"/>
-                    <ColumnDefinition Width="95*"/>
-                </Grid.ColumnDefinitions>
-                <Button x:Name="FilePathbtnSSS" Content="· · ·" HorizontalAlignment="Left" Margin="69,13,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="FilePathbtnSSS_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
-                <Button x:Name="PathbtnNinbot" Content="· · ·" HorizontalAlignment="Left" Margin="69,40,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="PathbtnNinbot_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
-                <Button x:Name="FilebtnTracker" Content="· · ·" HorizontalAlignment="Left" Margin="69,67,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="FilebtnTracker_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
-                <Button x:Name="PathbtnMultiMC" Content="· · ·" HorizontalAlignment="Left" Margin="69,94,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="PathbtnMultiMC_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
-                <Button x:Name="PathbtnTheWall" Content="· · ·" HorizontalAlignment="Left" Margin="69,121,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="PathbtnTheWall_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
-                <Button x:Name="PathbtnOBS" Content="· · ·" HorizontalAlignment="Left" Margin="69,148,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="PathbtnOBS_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
-                <TextBox x:Name="SSSTextbox" HorizontalAlignment="Left" Margin="0,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
-                <TextBox x:Name="NinBotTextBox" HorizontalAlignment="Left" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
-                <TextBox x:Name="TrackerTextBox" HorizontalAlignment="Left" Margin="0,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
-                <TextBox x:Name="MultiMCTextBox" HorizontalAlignment="Left" Margin="0,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
-                <TextBox x:Name="WallMacroTextBox" HorizontalAlignment="Left" Margin="0,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
-                <TextBox x:Name="OBSTextBox" HorizontalAlignment="Left" Margin="0,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
-                <TextBlock x:Name="SSSTextblock" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Standard Settings.txt" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
-                <TextBlock x:Name="NinBotTextBlock" HorizontalAlignment="Left" Margin="10,27,0,0" TextWrapping="Wrap" Text="Ninjabrain Bot.jar" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
-                <TextBlock x:Name="TrackerTextBlock" HorizontalAlignment="Left" Margin="10,54,0,0" TextWrapping="Wrap" Text="Tracker.exe" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2" Width="55"/>
-                <TextBlock x:Name="MultiMCTextBlock" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="MultiMC.exe" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
-                <TextBlock x:Name="WallMacroTextBlock" HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="TheWall Macro.ahk" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
-                <TextBlock x:Name="OBSTextBlock" HorizontalAlignment="Left" Margin="10,135,0,0" TextWrapping="Wrap" Text="OBS.exe" VerticalAlignment="Top" FontSize="10" Foreground="White" Width="55"/>
-            </Grid>
-            <Button x:Name="SSSbtn" Content="Standard &#xa; Settings" Opacity="0.75" Height="41" Width="120" FontWeight="Bold" FontSize="14" Margin="0,10,0,0" Click="StandardSettingsandMacro_Click" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
-            <Grid x:Name="StandardSettingsGrid" Height="55" Width="136" Visibility="Collapsed">
-                <Button x:Name="SyStSebtn" Content="    Sync&#xA; Settings" FontSize="13" Margin="0,10,0,0"
-                HorizontalAlignment="Left" VerticalAlignment="Center" Height="42" Width="65" Opacity="0.75" FontWeight="Bold" Click="SyStSebtn_Click" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <StackPanel HorizontalAlignment="Center" Margin="0,0,660,0">
+                <Button x:Name="Settingsbtn" Content="Startup Settings" Height="41" Width="120" FontWeight="Bold" FontSize="14" Click="Settingsbtn_Click" Opacity="0.75" Margin="0,10,0,0" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
+                <Grid x:Name="CheckBoxGrid" Height="216" Width="120" Visibility="Collapsed">
+                    <CheckBox x:Name="SyncSettingsCbx" Content="Sync Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="100" Background="White" Foreground="White" Checked="SyncSettingsCbx_Checked" Unchecked="SyncSettingsCbx_Checked"/>
+                    <CheckBox x:Name="NinBotCbx" Content="NinjaBot" HorizontalAlignment="Left" Margin="0,16,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="NinBotCbx_Checked" Unchecked="NinBotCbx_Checked"/>
+                    <CheckBox x:Name="TrackerCbx" Content="Tracker" HorizontalAlignment="Left" Margin="0,32,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="TrackerCbx_Checked" Unchecked="TrackerCbx_Checked"/>
+                    <CheckBox x:Name="InstancesCbx" Content="Instances" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="InstancesCbx_Checked" Unchecked="InstancesCbx_Checked"/>
+                    <CheckBox x:Name="MacroCbx" Content="Macro" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="MacroCbx_Checked" Unchecked="MacroCbx_Checked"/>
+                    <CheckBox x:Name="ObsCbx" Content="OBS" HorizontalAlignment="Left" Margin="0,136,0,0" VerticalAlignment="Top" Height="16" Width="88" Background="White" Foreground="White" Checked="ObsCbx_Checked" Unchecked="ObsCbx_Checked"/>
+                    <CheckBox x:Name="DelOldWorCbx" Content="Delete Old Worlds" HorizontalAlignment="Center" Margin="0,152,0,0" VerticalAlignment="Top" Height="16" Width="120" Background="White" Foreground="White" Checked="DelOldWorCbx_Checked" Unchecked="DelOldWorCbx_Checked"/>
+                    <ComboBox Background="#FFB7B39D" Height="18" x:Name="cboNumZones" Width="40" HorizontalAlignment="Left" Margin="4,64,0,0" VerticalAlignment="Top"  FontSize="10" SelectionChanged="cboNumZonesChanged">
+                        <ComboBox.ItemsSource>
+                            <x:Array Type="{x:Type sys:Int32}">
+                                <sys:Int32>1</sys:Int32>
+                                <sys:Int32>2</sys:Int32>
+                                <sys:Int32>3</sys:Int32>
+                                <sys:Int32>4</sys:Int32>
+                                <sys:Int32>5</sys:Int32>
+                                <sys:Int32>6</sys:Int32>
+                                <sys:Int32>7</sys:Int32>
+                                <sys:Int32>8</sys:Int32>
+                                <sys:Int32>9</sys:Int32>
+                                <sys:Int32>10</sys:Int32>
+                                <sys:Int32>11</sys:Int32>
+                                <sys:Int32>12</sys:Int32>
+                                <sys:Int32>13</sys:Int32>
+                                <sys:Int32>14</sys:Int32>
+                                <sys:Int32>15</sys:Int32>
+                                <sys:Int32>16</sys:Int32>
+                                <sys:Int32>17</sys:Int32>
+                                <sys:Int32>18</sys:Int32>
+                                <sys:Int32>19</sys:Int32>
+                                <sys:Int32>20</sys:Int32>
+                                <sys:Int32>21</sys:Int32>
+                                <sys:Int32>22</sys:Int32>
+                                <sys:Int32>23</sys:Int32>
+                                <sys:Int32>24</sys:Int32>
+                                <sys:Int32>25</sys:Int32>
+                            </x:Array>
+                        </ComboBox.ItemsSource>
+                    </ComboBox>
+                    <TextBox x:Name="InstanceFormatTextBox" HorizontalAlignment="Center" Height="18" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="InstanceFormatTextBox_TextChanged" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.7"/>
+                    <TextBlock x:Name="InstanceFormatTextBlock" HorizontalAlignment="Left" Margin="4,83,0,0" TextWrapping="Wrap" Text="Instance format" VerticalAlignment="Top" Width="90" Foreground="White"/>
+                    <CheckBox x:Name="AddApp1cbx" Content="Extra App 1" HorizontalAlignment="Center" Margin="0,168,0,0" VerticalAlignment="Top" Height="16" Width="120" Background="White" Foreground="White" Checked="AddApp1cbx_Checked" Unchecked="AddApp1cbx_Checked"/>
+                    <CheckBox x:Name="AddApp2cbx" Content="Extra App 2" HorizontalAlignment="Center" Margin="0,184,0,0" VerticalAlignment="Top" Height="16" Width="120" Background="White" Foreground="White" Checked="AddApp2cbx_Checked" Unchecked="AddApp2cbx_Checked"/>
+                    <CheckBox x:Name="AddApp3cbx" Content="Extra App 3" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Height="16" Width="120" Background="White" Foreground="White" Checked="AddApp3cbx_Checked" Unchecked="AddApp3cbx_Checked"/>
+                </Grid>
+                <Button x:Name="PathHider" Content="Application &#xa;     Paths" Opacity="0.75" Height="41" Width="120" FontWeight="Bold" FontSize="14" Margin="0,10,0,0" Click="PathHider_Click" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
+                <Grid x:Name="PathSetterGrid" Height="245" Width="136" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="41*"/>
+                        <ColumnDefinition Width="95*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="FilePathbtnSSS" Content="· · ·" HorizontalAlignment="Left" Margin="69,13,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="FilePathbtnSSS_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <Button x:Name="PathbtnNinbot" Content="· · ·" HorizontalAlignment="Left" Margin="69,40,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="PathbtnNinbot_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <Button x:Name="FilebtnTracker" Content="· · ·" HorizontalAlignment="Left" Margin="69,67,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="FilebtnTracker_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <Button x:Name="PathbtnMultiMC" Content="· · ·" HorizontalAlignment="Left" Margin="69,94,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="PathbtnMultiMC_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <Button x:Name="PathbtnTheWall" Content="· · ·" HorizontalAlignment="Left" Margin="69,121,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="PathbtnTheWall_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <Button x:Name="PathbtnOBS" Content="· · ·" Margin="69,148,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Click="PathbtnOBS_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <TextBox x:Name="SSSTextbox" HorizontalAlignment="Left" Margin="0,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBox x:Name="NinBotTextBox" HorizontalAlignment="Left" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBox x:Name="TrackerTextBox" HorizontalAlignment="Left" Margin="0,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBox x:Name="MultiMCTextBox" HorizontalAlignment="Left" Margin="0,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBox x:Name="WallMacroTextBox" HorizontalAlignment="Left" Margin="0,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBox x:Name="OBSTextBox" HorizontalAlignment="Left" Margin="0,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBlock x:Name="SSSTextblock" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Standard Settings.txt" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="NinBotTextBlock" HorizontalAlignment="Left" Margin="10,27,0,0" TextWrapping="Wrap" Text="Ninjabrain Bot.jar" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="TrackerTextBlock" HorizontalAlignment="Left" Margin="10,54,0,0" TextWrapping="Wrap" Text="Tracker.exe" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2" Width="55"/>
+                    <TextBlock x:Name="MultiMCTextBlock" HorizontalAlignment="Left" Margin="10,81,0,0" TextWrapping="Wrap" Text="MultiMC.exe" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="WallMacroTextBlock" HorizontalAlignment="Left" Margin="10,108,0,0" TextWrapping="Wrap" Text="TheWall Macro.ahk" VerticalAlignment="Top" FontSize="10" Foreground="White" Grid.ColumnSpan="2"/>
+                    <TextBlock x:Name="OBSTextBlock" HorizontalAlignment="Left" Margin="10,135,0,0" Text="OBS.exe" VerticalAlignment="Top" FontSize="10" Foreground="White" Width="70" Grid.ColumnSpan="2"/>
+                    <Button x:Name="AddApp1btn" Content="· · ·" HorizontalAlignment="Left" Margin="69,175,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="AddApp1_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <TextBox x:Name="AddApp1TextBox" HorizontalAlignment="Left" Margin="0,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBlock x:Name="AddApp1TextBlock" HorizontalAlignment="Left" Margin="10,162,0,0" TextWrapping="Wrap" Text="Additional Application 1" VerticalAlignment="Top" FontSize="10" Foreground="White" Width="110" Grid.ColumnSpan="2"/>
+                    <Button x:Name="AddApp2btn" Content="· · ·" HorizontalAlignment="Left" Margin="69,202,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="AddApp2_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <TextBox x:Name="AddApp2TextBox" HorizontalAlignment="Left" Margin="0,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBlock x:Name="AddApp2TextBlock" HorizontalAlignment="Left" Margin="10,189,0,0" TextWrapping="Wrap" Text="Additional Application 2" VerticalAlignment="Top" FontSize="10" Foreground="White" Width="110" Grid.ColumnSpan="2"/>
+                    <Button x:Name="AddApp3btn" Content="· · ·" HorizontalAlignment="Left" Margin="69,229,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="16" Width="26" Click="AddApp3_Click" Grid.Column="1" Background="#FF944FFB" BorderBrush="White" BorderThickness="0.7"/>
+                    <TextBox x:Name="AddApp3TextBox" HorizontalAlignment="Left" Margin="0,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Height="16" Opacity="0.75" IsReadOnly="True" FontSize="11" Grid.ColumnSpan="2" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.0"/>
+                    <TextBlock x:Name="AddApp3TextBlock" HorizontalAlignment="Left" Margin="10,216,0,0" TextWrapping="Wrap" Text="Additional Application 3" VerticalAlignment="Top" FontSize="10" Foreground="White" Width="110" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Button x:Name="SSSbtn" Content="Standard &#xa; Settings" Opacity="0.75" Height="41" Width="120" FontWeight="Bold" FontSize="14" Margin="0,10,0,0" Click="StandardSettingsandMacro_Click" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
+                <Grid x:Name="StandardSettingsGrid" Height="100" Width="136" Visibility="Collapsed">
+                    <Button x:Name="SyStSebtn" Content="    Sync&#xA; Settings" FontSize="13" Margin="0,10,0,0"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Height="42" Width="65" Opacity="0.75" FontWeight="Bold" Click="SyStSebtn_Click" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"
                 />
-                <Button x:Name="SSSOpenbtn" Content="  Open &#xA;Settings" FontSize="13" 
-                HorizontalAlignment="Left" Margin="69,10,0,0" VerticalAlignment="Center" Height="42" Width="65" Opacity="0.75" FontWeight="Bold" Click="SSSOpenbtn_Click" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"
+                    <Button x:Name="SSSOpenbtn" Content="  Open &#xA;Settings" FontSize="13" 
+                HorizontalAlignment="Center" Margin="0,58,0,0" VerticalAlignment="Top" Height="42" Width="65" Opacity="0.75" FontWeight="Bold" Click="SSSOpenbtn_Click" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"
                 />
-            </Grid>
-            <Button x:Name="Macrobtn" Content="TheWall Macro" Opacity="0.75" Height="41" Width="120" FontWeight="Bold" FontSize="14" Margin="0,10,0,0" Click="Macro_Click" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
-            <Grid x:Name="MacroGrid" Height="89" Width="136" Visibility="Collapsed">
-                <Button x:Name="MacroReset" Content="Reload&#xA;Macro" FontSize="16" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"
+                </Grid>
+                <Button x:Name="Macrobtn" Content="TheWall Macro" Opacity="0.75" Height="41" Width="120" FontWeight="Bold" FontSize="14" Margin="0,10,0,0" Click="Macro_Click" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
+                <Grid x:Name="MacroGrid" Height="89" Width="136" Visibility="Collapsed">
+                    <Button x:Name="MacroReset" Content="Reload&#xA;Macro" FontSize="16" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"
                 HorizontalAlignment="Left" Margin="15,9,0,0" VerticalAlignment="Top" Height="50" Width="100" Opacity="0.75" FontWeight="Bold" Click="MacroReloadbtn_Click"
                 />
-                <TextBox x:Name="WallByPass" HorizontalAlignment="Left" TextWrapping="Wrap" Text="WallBypass" Width="100" Opacity="0.75" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="15,64,0,0" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"/>
-                <CheckBox x:Name="WallByPasscbx" Content="" HorizontalAlignment="Left" VerticalContentAlignment="Center" Padding="4,-1,0,0" UseLayoutRounding="False" Checked="WallByPasscbx_Checked" Unchecked="WallByPasscbx_Checked" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="18,65,0,0">
-                    <CheckBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </CheckBox.RenderTransform>
-                </CheckBox>
+                    <TextBox x:Name="WallByPass" HorizontalAlignment="Left" TextWrapping="Wrap" Text="WallBypass" Width="100" Opacity="0.75" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalAlignment="Top" Margin="15,64,0,0" Background="#FF9C4EED" Foreground="White" BorderBrush="#FFC7AEE6"/>
+                    <CheckBox x:Name="WallByPasscbx" Content="" HorizontalAlignment="Left" VerticalContentAlignment="Center" Padding="4,-1,0,0" UseLayoutRounding="False" Checked="WallByPasscbx_Checked" Unchecked="WallByPasscbx_Checked" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Margin="18,65,0,0">
+                        <CheckBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </CheckBox.RenderTransform>
+                    </CheckBox>
 
-            </Grid>
-        </StackPanel>
+                </Grid>
+                <Button x:Name="GeneralOptions" Content="General Options" Opacity="0.75" Height="41" Width="120" FontWeight="Bold" FontSize="14" Click="GeneralOptions_Click" Margin="0,10,0,0" Background="#FF8729EA" Foreground="White" BorderBrush="White"/>
+                <Grid x:Name="GeneralOptionsGrid" Height="120" Width="120" Visibility="Collapsed">
+                    <CheckBox x:Name="SecondOBScbx" Content="Second OBS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="16" Width="100" Background="White" Foreground="White" Checked="SecondOBS_Checked" Unchecked="SecondOBS_Checked"/>
+                    <TextBlock x:Name="OBSSceneFormat1TextBlock" Margin="4,16,0,0" TextWrapping="Wrap" Text="OBSScene 1" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="90"/>
+                    <TextBlock x:Name="OBSSceneFormat2TextBlock" HorizontalAlignment="Left" Margin="4,53,0,0" TextWrapping="Wrap" Text="OBSScene 2" VerticalAlignment="Top" Width="90" Foreground="White"/>
+                    <TextBox x:Name="OBSSceneFormat1TextBox" HorizontalAlignment="Center" Height="18" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="OBSSceneFormat1_TextChanged" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.7"/>
+                    <TextBox x:Name="OBSSceneFormat2TextBox" HorizontalAlignment="Center" Height="18" Margin="0,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="OBSSceneFormat2_TextChanged" Background="#FFAB77F9" BorderBrush="White" BorderThickness="0.7"/>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Window>

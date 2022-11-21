@@ -6,6 +6,7 @@ using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -143,7 +144,7 @@ namespace MCSRLauncherBackup
         {
             if (Settings.reset_macro)
             {
-                if (true)
+                try
                 {
                     Thread.Sleep(15000);
                     while (true)
@@ -173,7 +174,7 @@ namespace MCSRLauncherBackup
                                 Thread.Sleep(100);
 
                             }
-                            Thread.Sleep(2000);
+                            Thread.Sleep(3000);
                             if (x == Settings.instance_count)
                             {
                                 break;
@@ -219,10 +220,10 @@ namespace MCSRLauncherBackup
                         }
                     }
 
-                    Thread.Sleep(3000);
+                    Thread.Sleep(6000);
                     processStarter(Environment.CurrentDirectory + "\\Utils", "paus.ahk");
                 }
-                else
+                catch
                 {
                     MessageBox.Show("Could not find logs. Path missing or invalid.");
                 }
@@ -230,6 +231,7 @@ namespace MCSRLauncherBackup
 
 
             }
+
 
             macro_startup();
             obs_startup();
@@ -269,8 +271,12 @@ namespace MCSRLauncherBackup
                 {
                     try
                     {
-                        processStarter(Settings.OBSSplit[0], Settings.OBSSplit[1] + " --scene \"Source Record\"");
+                        processStarter(Settings.OBSSplit[0], Settings.OBSSplit[1] + $" --scene \"{Settings.OBSSceneName1}\" --startrecording --multi");
                         //Console.WriteLine("Starting OBS...");
+                        if (Settings.start_second_obs)
+                        {
+                            processStarter(Settings.OBSSplit[0], Settings.OBSSplit[1] + $" --scene \"{Settings.OBSSceneName2}\" --startrecording --multi");
+                        }
                     }
                     catch (Exception)
                     {
@@ -281,10 +287,32 @@ namespace MCSRLauncherBackup
                 {
                     MessageBox.Show("Could not run OBS. Path missing or invalid.");
                 }
-
             }
         }
 
+        public static void AdditionalApplication1()
+        {
+            if (Settings.start_AddApp1)
+            {
+                processStarter(Settings.AddApp1Split[0], Settings.AddApp1Split[1]);
+            }
+        }
+
+        public static void AdditionalApplication2()
+        {
+            if (Settings.start_AddApp2)
+            {
+                processStarter(Settings.AddApp2Split[0], Settings.AddApp2Split[1]);
+            }
+        }
+
+        public static void AdditionalApplication3()
+        {
+            if (Settings.start_AddApp3)
+            {
+                processStarter(Settings.AddApp3Split[0], Settings.AddApp3Split[1]);
+            }
+        }
 
         public static void processStarter(string directoryLocation, string cmdCommand)
         {
@@ -296,6 +324,7 @@ namespace MCSRLauncherBackup
             startInfo.RedirectStandardInput = true;
             startInfo.RedirectStandardOutput = true;
             startInfo.RedirectStandardError = true;
+            startInfo.UseShellExecute = false;
             startInfo.WorkingDirectory = directoryLocation;
             Thread.Sleep(200);
             Process.Start(startInfo);
