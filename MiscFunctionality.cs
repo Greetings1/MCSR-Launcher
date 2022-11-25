@@ -127,7 +127,7 @@ namespace MCSRLauncherBackup
 
         public static void SavePathToFile(string applicationName, string inputPath)
         {
-            if (inputPath != "")
+            //if (inputPath != "")
             {
                 switch (applicationName)
                 {
@@ -289,7 +289,7 @@ namespace MCSRLauncherBackup
         {
             try
             {
-                string wallSettings = File.ReadAllText(Settings.WallMacroSplit[0] + "\\Data\\settings.ahk");
+                string wallSettings = File.ReadAllText(Settings.WallMacroSplit[0] + "\\settings.ahk");
 
                 bool isChecked = false;
 

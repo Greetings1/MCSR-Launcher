@@ -37,7 +37,15 @@ namespace MCSRLauncherBackup
 
             MiscFunctionality.InstanceNumberGetter();
 
-            cboNumZones.SelectedValue = Settings.instance_count;
+            Settings.instance_count = Convert.ToInt32(File.ReadAllText("Data\\InstanceCount.txt"));
+
+            txtNum.Text = Settings.instance_count.ToString();
+
+            Settings.start_recording = Convert.ToBoolean(File.ReadAllText("Data\\StartRecording.txt"));
+
+            StartRecordingOBScbx.IsChecked = Settings.start_recording;
+
+            //cboNumZones.SelectedValue = Settings.instance_count;
 
             MiscFunctionality.GetPathsFromFile();
 
@@ -96,7 +104,7 @@ namespace MCSRLauncherBackup
         {
             Settings.Instance_Format = InstanceFormatTextBox.Text;
             StartClass.Start1();
-            instance_startup();
+            instance_startup_thread();
             StartClass.Start2();
         }
 
@@ -191,12 +199,12 @@ namespace MCSRLauncherBackup
 
         }
 
-        //public void instance_startup_thread()
-        //{
-        //    Thread thread = new Thread(instance_startup);
-        //    thread.IsBackground = true;
-        //    thread.Start();
-        //}
+        public void instance_startup_thread()
+        {
+            Thread thread = new Thread(instance_startup);
+            thread.IsBackground = true;
+            thread.Start();
+        }
 
         public void instance_startup()
         {
@@ -209,7 +217,7 @@ namespace MCSRLauncherBackup
                         for (int i = 1; i <= Settings.instance_count; i++)
                         {
                             //Console.Write($"Starting {Settings.Instance_Format}{i}...");
-                            Thread.Sleep(100);
+                            Thread.Sleep(600);
                             ProcessStarter(i);
                         }
                     }
@@ -261,11 +269,11 @@ namespace MCSRLauncherBackup
             Application.Current.Shutdown();
         }
 
-        private void cboNumZonesChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Settings.instance_count = cboNumZones.SelectedIndex + 1;
-            File.WriteAllText(Environment.CurrentDirectory + "\\Data\\InstanceCount.txt", Convert.ToString(Settings.instance_count));
-        }
+        //private void cboNumZonesChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    Settings.instance_count = cboNumZones.SelectedIndex + 1;
+        //    File.WriteAllText(Environment.CurrentDirectory + "\\Data\\InstanceCount.txt", Convert.ToString(Settings.instance_count));
+        //}
 
         private void FilePathbtnSSS_Click(object sender, RoutedEventArgs e)
         {
@@ -582,6 +590,114 @@ namespace MCSRLauncherBackup
             string[] OBSSceneNames = File.ReadAllLines(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt");
 
             File.WriteAllText(Environment.CurrentDirectory + "\\Data\\OBSSceneFormat.txt", $"{OBSSceneNames[0]}\n{OBSSceneFormat2TextBox.Text}");
+        }
+
+
+        public int NumValue
+        {
+            get { return Settings.instance_count; }
+            set
+            {
+                Settings.instance_count = value;
+                txtNum.Text = value.ToString();
+            }
+        }
+
+        private void txtNum_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtNum == null)
+            {
+                return;
+            }
+        }
+
+        private void cmdDown_Click(object sender, RoutedEventArgs e)
+        {
+            if (Settings.instance_count > 1)
+            {
+                NumValue--;
+                File.WriteAllText("Data\\InstanceCount.txt",Convert.ToString(Settings.instance_count));
+                Settings.instance_count = Settings.instance_count;
+            }
+        }
+
+        private void cmdUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (Settings.instance_count < 25)
+            {
+                NumValue++;
+                File.WriteAllText("Data\\InstanceCount.txt", Convert.ToString(Settings.instance_count));
+                Settings.instance_count = Settings.instance_count;
+            }
+        }
+
+        private void StartRecordingOBS_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToBoolean(StartRecordingOBScbx.IsChecked))
+            {
+                Settings.start_recording = true;
+                File.WriteAllText("Data\\StartRecording.txt", StartRecordingOBScbx.IsChecked.ToString());
+            }
+            else if (!Convert.ToBoolean(StartRecordingOBScbx.IsChecked))
+            {
+                Settings.start_recording = false;
+                File.WriteAllText("Data\\StartRecording.txt", StartRecordingOBScbx.IsChecked.ToString());
+            }
+        }
+
+        private void X1_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.StandardSettingsSplit[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("StandardSettings", "");
+        }
+        private void X2_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.NinjaBotSplit[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("NinjaBot", "");
+        }
+        private void X3_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.TrackerSplit[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("Tracker", "");
+        }
+        private void X4_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.MultiMCSplit[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("MultiMC", "");
+        }
+        private void X5_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.WallMacroSplit[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("WallMacro", "");
+        }
+        private void X6_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.OBSSplit[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("OBS", "");
+        }
+        private void X7_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.AddApp1Split[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("AddApp1", "");
+        }
+        private void X8_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.AddApp2Split[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("AddApp2", "");
+        }
+        private void X9_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.AddApp3Split[1] = "";
+            FileNameChanger();
+            MiscFunctionality.SavePathToFile("AddApp3", "");
         }
     }
 }

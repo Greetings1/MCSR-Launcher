@@ -1,1 +1,1 @@
-<Instance Format>
+Instance

@@ -20,6 +20,7 @@ namespace MCSRLauncherBackup
             reset_macro,        // Set to 1 if using a reset macro
             start_obs,          // Set to 1 if using obs
             start_second_obs,
+            start_recording,
             delete_old_worlds,  // Set to 1 to make it delete your worlds
             start_AddApp1,
             start_AddApp2,
@@ -71,5 +72,7 @@ namespace MCSRLauncherBackup
         // Don't Configure
         //instance_folder = @$"{mmc}\instances";
 
+
+        //I Plagarised Languste
     }
 }
