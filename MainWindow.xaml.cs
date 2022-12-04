@@ -89,7 +89,7 @@ namespace MCSRLauncherBackup
             }
             catch (Exception)
             {
-                MessageBox.Show("Could not find OBSSceneFormat.txt");
+                Settings.OBSSceneName2 = "";
             }
 
             WallByPasscbx.IsChecked = MiscFunctionality.ByPassCheckInitalizer(false);
@@ -217,7 +217,7 @@ namespace MCSRLauncherBackup
                         for (int i = 1; i <= Settings.instance_count; i++)
                         {
                             //Console.Write($"Starting {Settings.Instance_Format}{i}...");
-                            Thread.Sleep(600);
+                            Thread.Sleep(100);
                             ProcessStarter(i);
                         }
                     }
@@ -239,13 +239,13 @@ namespace MCSRLauncherBackup
         public void ProcessStarter(int i)
         {
             MCtask = new ProcessStartInfo();
-            MCtask.FileName = "cmd.exe";
-            MCtask.CreateNoWindow = true;
-            MCtask.WindowStyle = ProcessWindowStyle.Hidden;
-            MCtask.Arguments = "/c " + $"{Settings.MultiMCSplit[1]} -l {Settings.Instance_Format}{i}";
-            MCtask.RedirectStandardInput = true;
-            MCtask.RedirectStandardOutput = true;
-            MCtask.RedirectStandardError = true;
+            MCtask.FileName = Settings.MultiMC;
+            //MCtask.CreateNoWindow = true;
+            //MCtask.WindowStyle = ProcessWindowStyle.Hidden;
+            MCtask.Arguments = $"-l {Settings.Instance_Format}{i}";
+            //MCtask.RedirectStandardInput = true;
+            //MCtask.RedirectStandardOutput = true;
+            //MCtask.RedirectStandardError = true;
             MCtask.UseShellExecute = false;
             MCtask.WorkingDirectory = Settings.MultiMCSplit[0];
 
@@ -259,7 +259,7 @@ namespace MCSRLauncherBackup
             proc.StartInfo = MCtask;
             inst++;
             proc.Start();
-            proc.WaitForExit();
+            //proc.WaitForExit();
         }
 
         protected override void OnClosed(EventArgs e)

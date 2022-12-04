@@ -54,19 +54,49 @@ namespace MCSRLauncherBackup
                     int deleted_worlds = 0;
                     for (int i = 1; i <= Settings.instance_count; i++)
                     {
-                        DirectoryInfo dir = new DirectoryInfo($"{Settings.MultiMCSplit[0]}\\instances\\{Settings.Instance_Format}{i}\\.minecraft\\saves");
+                        //DirectoryInfo dir = new DirectoryInfo($"{Settings.MultiMCSplit[0]}\\instances\\{Settings.Instance_Format}{i}\\.minecraft\\saves");
 
-                        foreach (var saveFile in dir.GetDirectories())
+
+                        var directories = Directory.GetDirectories(Settings.MultiMCSplit[0] + "\\instances");
+
+                        foreach (var item in directories)
                         {
-                            if (Regex.IsMatch(saveFile.Name, @"^([a-öA-Ö]{0,20}\s?Speedrun\s?#[0-9]{1,7}$)|(^[Nn]ew [Ww]orld$)"))
+                            try
                             {
-                                saveFile.Delete(true);
-                                //Console.WriteLine("Deleted \"" + saveFile.Name + "\" in instance " + i);
-                                deleted_worlds++;
+                                string instancecfg = File.ReadAllText(item + "\\instance.cfg");
+                                if (instancecfg.Contains($"name={Settings.Instance_Format}{i}"))
+                                {
+                                    DirectoryInfo dir = new DirectoryInfo(item + "\\.minecraft\\saves");
+
+                                    foreach (var saveFile in dir.GetDirectories())
+                                    {
+                                        if (Regex.IsMatch(saveFile.Name, @"^([a-öA-Ö]{0,20}\s?Speedrun\s?#[0-9]{1,7}$)|(^[Nn]ew [Ww]orld$)"))
+                                        {
+                                            saveFile.Delete(true);
+                                            //Console.WriteLine("Deleted \"" + saveFile.Name + "\" in instance " + i);
+                                            deleted_worlds++;
+                                        }
+                                    }
+                                }
                             }
+                            catch (Exception){}
+
                         }
+
+
+
                     }
-                    int deletedWorldsFromFile = Convert.ToInt32(File.ReadAllText(Environment.CurrentDirectory + "\\Data\\DeletedWorlds.txt"));
+                    int deletedWorldsFromFile;
+                    try
+                    {
+                        deletedWorldsFromFile = Convert.ToInt32(File.ReadAllText(Environment.CurrentDirectory + "\\Data\\DeletedWorlds.txt"));
+                    }
+                    catch (Exception)
+                    {
+                        deletedWorldsFromFile = 0;
+                        File.WriteAllText(Environment.CurrentDirectory + "\\Data\\DeletedWorlds.txt", deletedWorldsFromFile.ToString());
+                    }
+
                     deletedWorldsFromFile = deletedWorldsFromFile + deleted_worlds;
                     File.WriteAllText(Environment.CurrentDirectory + "\\Data\\DeletedWorlds.txt", deletedWorldsFromFile.ToString());
                     MessageBox.Show("This session : " + deleted_worlds + "\nTotal: " + deletedWorldsFromFile, "Deleted worlds    ");
